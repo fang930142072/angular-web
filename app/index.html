@@ -8,13 +8,16 @@
     <link rel="stylesheet" type="text/css" href="assets/css/wap.css">
 </head>
 
-<body ng-app="moviecat">
+<body ng-app="moviecat" ng-controller='mainController'> 
     <!-- 顶部导航栏开始 -->
     <div class="top">
         <div class="header">
             <div class="search">
-                <input class="my-input" type="text" placeholder="电影搜索">
-                <button>搜索</button>
+            	<form ng-submit='search()'>
+            		<input ng-model='query' class="my-input" type="text" placeholder="电影搜索">
+                	<button>搜索</button>
+            	</form>
+                
             </div>
         </div>
         <nav class="nav">

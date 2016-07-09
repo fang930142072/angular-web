@@ -41,7 +41,8 @@
     //    })
           var totalPage = 0;
         //自定义的jsonp请求
-        MyService.jsonp('https://api.douban.com/v2/movie/'+$routeParams.movreType,
+        var newurl = 'https://api.douban.com/v2/movie/'+$routeParams.movreType+"?q="+$routeParams.q;
+        MyService.jsonp(newurl,
             {start:start,count:count},
             function (data) {
                 $scope.data=data;//不能监视变化改变页面数据
