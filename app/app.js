@@ -3,8 +3,10 @@
 
     // start your ride
     var app = angular.module('moviecat',[
+        'moviecat.auto',
     	'moviecat.http-server',
-        'moviecat.top250',
-        'moviecat.auto'
+    	'moviecat.home',
+        'moviecat.top250'
+
     ]);
 })(angular);
