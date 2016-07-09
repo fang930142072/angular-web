@@ -3,7 +3,7 @@
  */
 
 (function (angular) {
-    var moudule = angular.module("moviecat.top250",['ngRoute','moviecat.http-server']);
+    var moudule = angular.module("moviecat.list",['ngRoute','moviecat.http-server']);
     //module.controller("contr",["$scope", function ($scope) {
     //
     //}])
@@ -11,11 +11,11 @@
         $routeProvider.when('/:movreType/:page?',{
             // 指定一个模板路径,注意，模板字符串文件的路径是主模块所在目录开始计算.是相对于主模块文件所在路径计算的.
             templateUrl:'./view.html',
-            controller:'top250Controller'
+            controller:'listController'
         })
     }])
 
-    moudule.controller('top250Controller',['$scope','MyService',
+    moudule.controller('listController',['$scope','MyService',
         '$routeParams',//把路由参数中的所有参数添加到自己的对象中
         '$route',//改变url锚点值的参数
         function ($scope,MyService,$routeParams,$route) {

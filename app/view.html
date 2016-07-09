@@ -3,7 +3,7 @@
     <ul>
         <li ng-repeat="item in data.subjects">
             <!-- ng-href="{{}}" -->
-            <a href="#/details">
+            <a href="#/details/{{item.id}}">
                 <img ng-src="{{item.images.large}}" alt="">
             </a>
             <div class="meta">
@@ -20,6 +20,9 @@
     </div>
 </div>
 <!--电影列表结束-->
+
+
+<!--模态框-->
 <div class="loading-box" ng-show="loading">
     <div class="sk-circle">
         <div class="sk-circle1 sk-child"></div>

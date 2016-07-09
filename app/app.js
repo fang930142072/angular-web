@@ -3,13 +3,20 @@
 
     // start your ride
     var app = angular.module('moviecat',[
-        'moviecat.auto',
-    	'moviecat.http-server',
-    	'moviecat.home',
-        'moviecat.top250'
+
+    
+
+    	'moviecat.http-server',//jsonp封装
+    	'moviecat.detail',//详情页
+    	'moviecat.home',//首页
+        'moviecat.list',//其他页
+        'moviecat.auto'
+        
 
     ]);
     
+    
+    //搜索模块
     app.controller('mainController',['$scope','$location',function($scope,$location){
     	$scope.query='';
     	$scope.search = function(){
