@@ -3,7 +3,8 @@
 
     // start your ride
     var app = angular.module('moviecat',[
-        'moviecat.in_theaters',
-        'moviecat.http-server'
+    	'moviecat.http-server',
+        'moviecat.top250',
+        'moviecat.auto'
     ]);
 })(angular);

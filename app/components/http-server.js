@@ -1,27 +1,29 @@
 /**
- * Created by ÎÒ¾ÍÊÇÎÒ on 2016/7/4.
+ * Created by ï¿½Ò¾ï¿½ï¿½ï¿½ï¿½ï¿½ on 2016/7/4.
  */
 
+
+//jsonpå®žçŽ°
 (function (angular) {
   var app = angular.module('moviecat.http-server',[]);
     app.service('MyService',['$window',function ($window) {
         this.jsonp=function (url,arg,fn){
-            //ºÏ²¢²ÎÊýµ½url(´«µÝµÄ²ÎÊý)
+            //ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½url(ï¿½ï¿½ï¿½ÝµÄ²ï¿½ï¿½ï¿½)
             var quertString ='';
             for(var key in arg){
                 quertString+=key+"="+arg[key]+"&";
             }
             url = url +"?"+quertString;
-            //´«µÝ¹ýÀ´µÄº¯Êý¸ø¸öÃû×Ö
+            //ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             $window.myCallback = fn;
             var mycal = 'jsonp_'+Math.random().toString().substr(2);
-            //·½·¨Ö´ÐÐºóÒÆ³ýscript±êÇ©
+            //ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ðºï¿½ï¿½Æ³ï¿½scriptï¿½ï¿½Ç©
             $window[mycal] = function (data) {
                 fn(data);
                 $window.document.body.removeChild(scriptN);
             }
             url = url+'callback='+mycal;
-            //¶¯Ì¬´´½¨script±êÇ©
+            //ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½scriptï¿½ï¿½Ç©
             var scriptN = $window.document.createElement('script');
             scriptN.src = url;
             //console.dir(scriptN)
